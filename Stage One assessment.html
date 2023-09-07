@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+    <meta charset="UTF-8">
+    <meta name="view" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Stage One Task</title>
+</head>
+<body>
+    <h1 data-testid="slackUserName">Sharon Lawal</h1>
+    <img src="link-to-your-profile-picture.jpg" alt="Sharon Lawal" data-testid="slackDisplayImage">
+
+    <span data-testid="currentDayOfTheWeek"></span>
+
+    <span data-testid="currentUTCTime"></span>
+
+    <p data-testid="myTrack">Frontend</p>
+
+    <a href="https://github.com/yourusername/your-repo" data-testid="githubURL">GitHub Repository</a>
+
+    <script>
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        
+        const updateCurrentDay = () => {
+            const currentDate = new Date();
+            const currentDay = daysOfWeek[currentDate.getUTCDay()];
+            const element = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+            
+            element.textContent = currentDay;
+        };
+    
+        updateCurrentDay();
+    </script>
+    <span data-testid="currentDayOfTheWeek"></span>
+</body>
+</html>
