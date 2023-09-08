@@ -58,21 +58,26 @@
     <a href="https://github.com/Anonymous001124/Assessment1" data-testid="githubURL">GitHub Repository</a>
 
     <script>
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-     
-    const updateCurrentDay = () => {
-    const currentDate = new Date();
-    const currentDay = daysOfWeek[currentDate.getUTCDay()];
-    const element = document.querySelector('[data-testid="currentDayOfTheWeek"]');
-         
-    console.log('Current Day:', currentDay);
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        
+        const updateCurrentDay = () => {
+            const currentDate = new Date();
+            const currentDay = daysOfWeek[currentDate.getUTCDay()];
+            const dayElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+            
+            dayElement.textContent = `Current Day: ${currentDay}`;
+        };
     
-    element.textContent = currentDay;
-    };
- 
-    updateCurrentDay();
+        const updateCurrentTime = () => {
+            const currentTime = new Date().toUTCString();
+            const timeElement = document.querySelector('[data-testid="currentUTCTime"]');
+            
+            timeElement.textContent = `Current UTC Time: ${currentTime}`;
+        };
+    
+        updateCurrentDay();
+        updateCurrentTime();
     </script>
-
-    <span data-testid="currentDayOfTheWeek"></span>
+    
 </body>
 </html>
