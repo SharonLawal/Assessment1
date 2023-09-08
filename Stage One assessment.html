@@ -4,10 +4,50 @@
     <meta charset="UTF-8">
     <meta name="view" content="width=device-width, initial-scale=1.0">
     <title>Frontend Stage One Task</title>
+
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        img {
+            max-width: 100px;
+            border-radius: 100%;
+            margin-top: 20px;
+        }
+
+        span {
+            font-size: 18px;
+            color: green;
+            display: block;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: red;
+            font-weight: bold;
+        }
+
+        a {
+            font-size: 16px;
+            color: #0077cc;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h1 data-testid="slackUserName">Sharon Lawal</h1>
-    <img src="ProfilePic.jpg" alt="Sharon Lawal" data-testid="slackDisplayImage">
+    <img src="ProfilePic.jpg" alt="SharonLawal" data-testid="slackDisplayImage">
 
     <span data-testid="currentDayOfTheWeek"></span>
 
@@ -15,21 +55,24 @@
 
     <p data-testid="myTrack">Frontend</p>
 
-    <a href="https://github.com/Anonymous001124/Assessment1.git" data-testid="githubURL">GitHub Repository</a>
+    <a href="https://github.com/Anonymous001124/Assessment1" data-testid="githubURL">GitHub Repository</a>
 
     <script>
-        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        
-        const updateCurrentDay = () => {
-            const currentDate = new Date();
-            const currentDay = daysOfWeek[currentDate.getUTCDay()];
-            const element = document.querySelector('[data-testid="currentDayOfTheWeek"]');
-            
-            element.textContent = currentDay;
-        };
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+     
+    const updateCurrentDay = () => {
+    const currentDate = new Date();
+    const currentDay = daysOfWeek[currentDate.getUTCDay()];
+    const element = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+         
+    console.log('Current Day:', currentDay);
     
-        updateCurrentDay();
+    element.textContent = currentDay;
+    };
+ 
+    updateCurrentDay();
     </script>
+
     <span data-testid="currentDayOfTheWeek"></span>
 </body>
 </html>
